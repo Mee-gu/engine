@@ -438,13 +438,13 @@ export enum GFXTextureViewType {
 }
 
 export enum GFXShaderType {
-    VERTEX,
-    HULL,
-    DOMAIN,
-    GEOMETRY,
-    FRAGMENT,
-    COMPUTE,
-    COUNT,
+    VERTEX = 0x1,
+    CONTROL = 0x2,
+    EVALUATION = 0x4,
+    GEOMETRY = 0x8,
+    FRAGMENT = 0x10,
+    COMPUTE = 0x20,
+    ALL = 0x3f,
 }
 
 export enum GFXBindingType {
