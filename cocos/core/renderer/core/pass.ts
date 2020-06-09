@@ -539,7 +539,7 @@ export class Pass {
             const info = source.get(s.name);
             if (!info || info.type !== GFXBindingType.SAMPLER) { console.warn(`builtin texture '${s.name}' not available!`); continue; }
             if (info.sampler) { bindingLayout.bindSampler(info.samplerInfo!.binding, info.sampler); }
-            bindingLayout.bindTextureView(info.samplerInfo!.binding, info.textureView!);
+            if (info.textureView) { bindingLayout.bindTextureView(info.samplerInfo!.binding, info.textureView!); }
         }
         this._resources.push(bindingLayout);
         // create pipeline state
